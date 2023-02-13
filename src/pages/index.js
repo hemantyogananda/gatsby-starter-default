@@ -1,9 +1,10 @@
 import React from "react"
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from "../components/Layout"
 import { header, btn } from '../styles/home.module.css'
 
-export default function Home() {
+export default function Home({data }) {
+    console.log(data);
   return (
     <Layout>
       <section className={header}>
@@ -18,3 +19,13 @@ export default function Home() {
     </Layout>
   )
 }
+
+export const query = graphql`
+query siteInfo {
+    site {
+        siteMetadata {
+            description
+            title
+        }
+    }
+}`
