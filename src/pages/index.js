@@ -1,10 +1,11 @@
 import React from "react"
 import { Link, graphql } from 'gatsby'
 import Layout from "../components/Layout"
-import { header, btn } from '../styles/home.module.css'
+import {header, btn} from '../styles/home.module.css'
+import Img from "gatsby-image"
 
-export default function Home({data }) {
-    const {title, description} = data.site.siteMetadata
+export default function Home({ data }) {
+  
   return (
     <Layout>
       <section className={header}>
@@ -14,19 +15,20 @@ export default function Home({data }) {
           <p>UX designer & web developer based in India.</p>
           <Link className={btn} to="/projects">My Portfolio Projects</Link>
         </div>
-        <img src="/banner.png" alt="site image" style={{ maxWidth: '100%' }} />
-        <p>{title} - {description}</p>
+        <Img fluid={data.file.childImageSharp.fluid} />
       </section>
     </Layout>
   )
 }
 
 export const query = graphql`
-query siteinfo {
-    site {
-        siteMetadata {
-            description
-            title
+  query Banner {
+    file(relativePath: {eq: "banner.png"}) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
+      }
     }
-}`
+  }
+`

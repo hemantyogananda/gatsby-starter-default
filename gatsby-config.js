@@ -1,44 +1,34 @@
 /**
  * Configure your Gatsby site with this file.
  *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
+ * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
-  siteMetadata: {
-    title: `Y Hemant`,
-    description: `Gatsby Portfolio`,
-    copyright: `This website is copyright of Hemant`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
-  },
+  /* Your site config here */
   plugins: [
-    `gatsby-plugin-image`,
+    `gatsby-transformer-remark`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/projects`,
+        path: `${__dirname}/src/projects/`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: `images`,
+        path: `${__dirname}/src/images/`,
       },
     },
   ],
+  siteMetadata: {
+    title: 'Y Hemant',
+    description: 'web dev portfolio',
+    copyright: 'This website is copyright 2021 Y Hemant',
+    contact: 'me@hemanty.co.in',
+  },
 }
