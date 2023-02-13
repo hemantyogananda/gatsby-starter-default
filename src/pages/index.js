@@ -15,7 +15,7 @@ export default function Home({data }) {
           <Link className={btn} to="/projects">My Portfolio Projects</Link>
         </div>
         <img src="/banner.png" alt="site image" style={{ maxWidth: '100%' }} />
-        <p>{title} = {description}</p>
+        <p>{title} - {description}</p>
       </section>
     </Layout>
   )

@@ -9,8 +9,9 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Hemant Yogananda`,
+    title: `Y Hemant`,
     description: `Gatsby Portfolio`,
+    copyright: `This website is copyright of Hemant`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
