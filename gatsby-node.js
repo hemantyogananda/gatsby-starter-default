@@ -11,7 +11,7 @@ exports.createPages = async ({ actions }) => {
   const { createPage } = actions
   createPage({
     path: "/about",
-    component: require.resolve("./src/templates/about.js"),
+    component: require.resolve("./src/pages/about.js"),
     context: {},
     defer: true,
   })
