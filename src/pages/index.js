@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import { header, btn } from '../styles/home.module.css'
 
 export default function Home({data }) {
-    console.log(data);
+    const {title, description} = data.site.siteMetadata
   return (
     <Layout>
       <section className={header}>
@@ -14,7 +14,8 @@ export default function Home({data }) {
           <p>UX designer & web developer based in India.</p>
           <Link className={btn} to="/projects">My Portfolio Projects</Link>
         </div>
-        <img src="/banner.png" alt="site image" style={{ maxWidth: '100%' }}/>
+        <img src="/banner.png" alt="site image" style={{ maxWidth: '100%' }} />
+        <p>{title} = {description}</p>
       </section>
     </Layout>
   )
