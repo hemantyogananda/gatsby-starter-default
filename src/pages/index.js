@@ -22,11 +22,9 @@ export default function Home({data }) {
 }
 
 export const query = graphql`
-query siteInfo {
     site {
         siteMetadata {
             description
             title
         }
-    }
 }`
