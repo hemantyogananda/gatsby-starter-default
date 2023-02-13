@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
         {children}
       </div>
       <footer>
-        <p>Copyright 2023 Web Warrior</p>
+        <p>Copyright Gatsby-2023 Hemant Yogananda</p>
       </footer>
     </div>
   )
